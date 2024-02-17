@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <header>
+        <div>
+
+        </div>
+        <div>
+       <h1>News</h1> 
+    </div>
+    <div>
+        <a href="/auth/sign-in">Login</a>
+    </div>
+</header>
+    <main>
+        <section>
+            <h1>Sport</h1>
+            <div class="articles">
+                {% for new in news %}
+                <a class="article" href="/home/{{new[0]}}">
+                    <img src='{{new[5]}}' alt="">
+                    <div class="content">
+                        <h2>{{new[1]}}</h2>
+                        <p>{{new[2]}}</p>
+                        <p>{{new[3]}}</p>
+                        <p>{{new[4]}}</p>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        <section>
+            <h1>Polytics</h1>
+        </section>
+    </main>
+</body>
+</html>
